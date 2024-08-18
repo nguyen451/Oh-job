@@ -34,3 +34,10 @@ I'm not really understand this :
             </script>
         </footer>
 
+## nav bar: I want to make it more beautiful
+Solution to have full page image: no nav
+
+## container aranging:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+## footer to the bottom but not the left
