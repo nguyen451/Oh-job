@@ -27,13 +27,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
-                {% if session["user_id"] %}
                     <ul class="navbar-nav me-auto mt-2">
                         <li class="nav-item"><a class="nav-link" href="/mbti">MBTI</a></li>
                         <li class="nav-item"><a class="nav-link" href="/major">Major</a></li>
                     </ul>
                     <ul class="navbar-nav ms-auto mt-2">
-                        <!--dropdown bootstrap-->
+                {% if session["user_id"] %}
                         <li class="nav-item"><a class="nav-link" href="/account">Account Setting</a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     </ul>
