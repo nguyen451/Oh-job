@@ -93,7 +93,7 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
-@app.route("/register")
+@app.route("/register", methods = ["GET", "POST"])
 def register():
     """Register user"""
 
