@@ -41,3 +41,5 @@ Solution to have full page image: no nav
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## footer to the bottom but not the left
+
+## Register: how to redirect to login and auto log user in
