@@ -122,7 +122,7 @@ def register():
         hash = generate_password_hash(request.form.get("password"))
 
         # Save username and hash
-        db.execute("INSERT INTO users (username, hash) VALUE (?, ?)", username, hash)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         # redirect user to index
         return redirect("/")
