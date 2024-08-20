@@ -7,6 +7,12 @@
     background-attachment: fixed;  
     background-size: cover;
 }
+/*font */
+.handlee-regular {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 
 /* nav */

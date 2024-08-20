@@ -92,3 +92,43 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
+
+@app.route("/register")
+def register():
+    """Register user"""
+
+    # Forget session
+    session.clear()
+
+    # User reached route post (by submitting information)
+    if request.method == "POST":
+        # Ensure username and password was provided
+        if not request.form.get("username") or not request.form.get("password"):
+            return apology("Must provide username and password", 400)
+        
+        # Ensure user true rewrite password
+        elif not request.form.get("confirmation"):
+            return apology("Must rewrite password", 400)
+        elif request.form.get("confirmation") != request.form.get("password"):
+            return apology("Password rewrite not true", 400)
+        
+        # Check if usename exists
+        username = request.form.get("username")
+        checkname = db.execute("SELECT username FROM users WHERE username = ?", username)
+        if len(checkname) != 0:
+            return apology("Username existed", 400)
+        
+        # Hash password
+        hash = generate_password_hash(request.form.get("password"))
+
+        # Save username and hash
+        db.execute("INSERT INTO users (username, hash) VALUE (?, ?)", username, hash)
+
+        # redirect user to index
+        return redirect("/")
+    else:
+        return render_template("register.html")
+
+        
+
+    
