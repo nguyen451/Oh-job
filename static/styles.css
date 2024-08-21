@@ -44,3 +44,26 @@ footer{
     margin-top: auto;
     
 }
+
+/*Header box */
+.header{
+    background-color: #1E2A5E;
+    color: #FEFAE0;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/*container */
+.container{
+    display: flex;
+    /*flex-dirextion: row; */
+    justify-content: space-evenly;
+
+}
+.item-1{
+    flex-grow: 1;
+}
+.item-2{
+    flex-wrap: wrap;
+}
