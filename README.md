@@ -43,3 +43,6 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 ## footer to the bottom but not the left
 
 ## Register: how to redirect to login and auto log user in
+
+## How to create transparent box in css:
+[Link to guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Howto/Make_box_transparent)

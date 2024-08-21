@@ -55,15 +55,44 @@ footer{
 }
 
 /*container */
-.container{
-    display: flex;
-    /*flex-dirextion: row; */
-    justify-content: space-evenly;
-
+/*.box2 {
+    background-color: rgba(247, 239, 229,.5);
+    color: #fff;
+  }
+*/
+.index-container{
+    display: grid;
+    grid-template-areas: 
+       'header header header step step step step step step step'
+       'header header header step step step step step step step'
+       'header header header step step step step step step step'
+       'header header header job job job job job job job'
+       'header header header job job job job job job job';
+    gap: 20px;
 }
 .item-1{
-    flex-grow: 1;
+    background-color: #1E2A5E;
+    color: #FEFAE0;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    grid-area: header;
 }
 .item-2{
-    flex-wrap: wrap;
+    background-color: #B4D4FF;
+    color: #000000;
+    opacity: .5;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: justify;
+    grid-area: step;
+}
+.item-3{
+    background-color: #B4D4FF;
+    color: #1E2A5E;
+    opacity: .5;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: left;
+    grid-area: job;
 }
