@@ -79,8 +79,8 @@ footer{
     grid-area: header;
 }
 .item-2{
-    background-color: #B4D4FF;
-    color: #000000;
+    background-color: #1E2A5E;
+    color: #fff;
     opacity: .5;
     margin-bottom: 2rem;
     padding: 2rem 1rem;
@@ -88,8 +88,8 @@ footer{
     grid-area: step;
 }
 .item-3{
-    background-color: #B4D4FF;
-    color: #1E2A5E;
+    background-color: #1E2A5E;
+    color: #fff;
     opacity: .5;
     margin-bottom: 2rem;
     padding: 2rem 1rem;
