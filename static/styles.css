@@ -49,11 +49,11 @@ footer{
 .header{
     background-color: #1E2A5E;
     color: #FEFAE0;
+    height: 400px;
+    width: auto;
     margin-bottom: 2rem;
     padding: 2rem 1rem;
-    text-align: center;
 }
-
 /*container */
 /*.box2 {
     background-color: rgba(247, 239, 229,.5);
@@ -78,6 +78,11 @@ footer{
     text-align: center;
     grid-area: header;
 }
+#wwhale{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .item-2{
     background-color: #1E2A5E;
     color: #fff;
@@ -95,4 +100,17 @@ footer{
     padding: 2rem 1rem;
     text-align: left;
     grid-area: job;
+}
+
+/*MBTI pages*/
+.header-text{
+    font-family: "Sofia", sans-serif;
+    font-size: 80px;
+    text-shadow: 8px 8px 8px #ababab;
+    color: #0f1530;
+}
+.mbti-img{
+    float: right;
+    height: 250px;
+    width: auto;
 }

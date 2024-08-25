@@ -33,14 +33,13 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    
     return render_template("index.html")
 
 
 @app.route("/mbti")
 @login_required
 def mbti():
-    return apology("Todo", 404)
+    return render_template("mbti.html")
 
 
 @app.route("/major")

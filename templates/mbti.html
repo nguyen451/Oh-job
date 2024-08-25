@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}mbti{% endblock %}
+
+{% block main %}
+    <div>
+        <h1 class="header-text" style="text-align: left;">About MBTI</h1>
+        <p style="font-size: large;">  </p>
+        <h6 style="text-align: left; color: rgb(45, 11, 78); font-family: Sofia, sans-serif; font-size: 20px;"> The Myers-Briggs type indicator (MBTI) is a measure of personality type based on the work of psychologist Carl Jung. Isabel Myers developed the MBTI during the Second World War to facilitate better working relationships between healthcare professionals, particularly nurses. The indicator operationalizes these preferences with questions indicating the individual's propensity towards 1 end of a dipole in 4 categories: Energy, Perceiving, Judging, Orientation.</h6>
+        <a href="https://www.simplypsychology.org/the-myers-briggs-type-indicator.html" style="text-align: left; font-family: Sofia, sans-serif; font-size: 20px;">Want to know more?</a>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX8yLIcdF4ZVV9_K5QHQOpk8pCuePT7gur_w&s" alt="mbti_icon1" class="mbti-img">
+        <img src="https://bettydreams.com/wp-content/uploads/dream-of-whales-meaning.jpg" alt="mbti_icon2" class="mbti-img">
+    <div>
+        <form action="/mbti_test" method="post">
+            <p style="color: rgb(45, 11, 78); font-family: Sofia, sans-serif; font-size: 20px;">Do the test <button class="btn btn-primary" type="submit">MBTI</button> or search your MBTI:</p>
+        </form>
+        <!-- how to search ?-->
+        <form action="/mbt_search" method="post">
+            <div class="mb-3" style="font-family: Sofia, sans-serif; font-size: 20px;">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="mbti" placeholder="Your MBTI" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit" style="font-family: Sofia, sans-serif; font-size: 20px;">Search</button>
+        </form>
+    </div>
+{% endblock %}
