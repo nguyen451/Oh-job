@@ -46,3 +46,5 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## How to create transparent box in css:
 [Link to guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Howto/Make_box_transparent)
+
+## Option in quest: use a loop? : no one can fix my code

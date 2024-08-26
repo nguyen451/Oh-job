@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}mbti{% endblock %}
+{% block title %} mbti {% endblock %}
 
 {% block main %}
     <div>
@@ -11,11 +11,11 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX8yLIcdF4ZVV9_K5QHQOpk8pCuePT7gur_w&s" alt="mbti_icon1" class="mbti-img">
         <img src="https://bettydreams.com/wp-content/uploads/dream-of-whales-meaning.jpg" alt="mbti_icon2" class="mbti-img">
     <div>
-        <form action="/mbti_test" method="post">
+        <form action="/test" method="get">
             <p style="color: rgb(45, 11, 78); font-family: Sofia, sans-serif; font-size: 20px;">Do the test <button class="btn btn-primary" type="submit">MBTI</button> or search your MBTI:</p>
         </form>
         <!-- how to search ?-->
-        <form action="/mbt_search" method="post">
+        <form action="/mbti_search" method="post">
             <div class="mb-3" style="font-family: Sofia, sans-serif; font-size: 20px;">
                 <input autocomplete="off" class="form-control mx-auto w-auto" name="mbti" placeholder="Your MBTI" type="text">
             </div>

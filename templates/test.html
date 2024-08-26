@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %} MBTI test {% endblock %}
+
+{% block main %}
+<!-- progress bar-->
+<div>
+    <h1 style="font-size: 60px; font-family: Sofia, sans-serif; color: rgb(1, 1, 86); text-shadow: 1px 1px 1px #ababab;">MBTI test</h1>
+    <h5 style="font-family: Sofia, sans-serif;">Do the test to discover what kind of personality you are</h5>
+</div>
+<div class="container">
+    <section class="quiz-section">
+        {% for question in questions %}
+        <div class="quiz-box">
+            <h3>{{question}}</h3>
+            <div class="option-list">
+                {% for option in options %}
+                <div class="option">
+                    <span class="handlee-regular">{{option}}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</div>
+{% endblock %}

@@ -20,6 +20,39 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///mbti.db")
 
+OPTIONS = ["0", "1", "2", "3", "4", "5"]
+QUESTIONS = ["Ra quyết định sau khi cân nhắc suy nghĩ của mọi người",
+            "Được mọi người cho là người có trí tưởng tượng và sáng tạo",
+            "Ra quyết định liên quan tới con người dựa trên số liệu và phân tích khách quan", 
+            "Chỉ thực hiện công việc với người khác khi họ đã đồng ý chấp nhận các cam kết có liên quan", 
+            "Lặng lẽ, trầm tĩnh suy tính một mình",
+            "Sử dụng các biện pháp đã biết rõ trong lý thuyết để thực hiện công việc",
+            "Ra quyết định dựa trên các suy nghĩ, phân tích logic, không bị ảnh hưởng bởi cảm xúc",
+            "Không muốn cam kết hạn chót hoàn thành công việc được giao",
+            "Suy nghĩ kỹ trước khi nói",
+            "Cân nhắc về các khả năng có thể xảy ra rồi mới giải quyết các vấn đề",
+            "Mọi người đánh giá bạn là người công bằng, lý trí", 
+            "Suy nghĩ một thời gian dài trước khi ra quyết định giải quyết vấn đề", 
+            "Suy nghĩ nội tại và tình cảm, không để cho người ngoài nhìn thấy được suy nghĩ của mình",
+            "Bạn ưa thích các định nghĩa và khái niệm không rõ ràng", 
+            "Bạn luôn giúp mọi người khám phá và hiểu họ cảm thấy như thế nào về sự vật/ sự việc",
+            "Bạn có xu hướng thay đổi và linh hoạt trong việc ra quyết định", 
+            "Bạn ít khi nói ra bên ngoài hoặc thể hiện rất ít các suy nghĩ, dự tính của mình", 
+            "Bạn tìm hiểu các cách nhìn khác nhau về sự kiện, vấn đề hay tình huống",
+            "Sử dụng các giác quan và trải nghiệm cá nhân để ra quyết định", 
+            "Lên kế hoạch dài hạn dựa trên các số liệu để thực hiện công việc", 
+            "Bạn có xu hướng thích gặp bạn mới", 
+            "Bạn thiên về người có nhiều ý tưởng",
+            "Bạn ra quyết định dựa trên niềm tin cá nhân",
+            "Sử dụng sổ tay ghi các ghi nhớ, cuộc hẹn, công việc",
+            "Thảo luận về các vấn đề mới và dnahf thời gian dài suy nghĩ cùng cả nhóm trước khi ra quyết định",
+            "Bạn suy nghĩ, hoạch định kế hoạch cẩn thận với sụ chính xác cao",
+            "Khi cân nhắc công việc, bạn không để ý tới hoàn cảnh và mối quan hệ với người có liên quan",
+            "Bạn sẽ làm tốt nếu như có hứng thú",
+            "Bạn có thiên hướng trở thành trung tâm của nhóm",
+            "Bạn có thiên hướng tưởng tượng về những gì có thể xảy ra",
+            "Bạn thường chú trọng đến cảm xúc khi xem phim hay đối thoại",
+            "Bạn thường bắt đầu buổi họp với thời gian định trước"]
 
 @app.after_request
 def after_request(response):
@@ -37,10 +70,17 @@ def index():
 
 
 @app.route("/mbti")
-@login_required
 def mbti():
     return render_template("mbti.html")
 
+@app.route("/test", methods = ["GET", "POST"])
+@login_required
+# is login required here? 
+def test():
+    # If user post all answer
+    if request.method == "POST":
+        return apology("Todo", 404)
+    return render_template("test.html", questions = QUESTIONS, options = OPTIONS)
 
 @app.route("/major")
 @login_required
