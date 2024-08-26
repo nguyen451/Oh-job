@@ -115,3 +115,22 @@ footer{
     width: auto;
 }
 
+/*MBTI test */
+.quiz-section .quiz-box{
+    background-color: bisque;
+}
+
+.quiz-box .question{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #0f1530;
+    text-align: center;
+}
+
+.option-list{
+    display: inline-block;
+}
+.option-list .option{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: bisque;
+    background-color: #0f1530;
+}
