@@ -9,19 +9,164 @@
     <h5 style="font-family: Sofia, sans-serif;">Do the test to discover what kind of personality you are</h5>
 </div>
 <div>
-    <section class="quiz-section">
-        {% for question in questions %}
-        <div class="quiz-box">
-            <h3 class="question">{{question}}</h3>
-            <div class="option-list">
-                {% for option in options %}
-                <div class="option">
-                    <span class="handlee-regular">{{option}}</span>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+        <h4 class="question">Ra quyết định sau khi cân nhắc suy nghĩ của mọi người</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
         {% endfor %}
-    </section>
+
+        <h4 class="question">Được mọi người cho là người có trí tưởng tượng và sáng tạo</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Ra quyết định liên quan tới con người dựa trên số liệu và phân tích khách quan</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Chỉ thực hiện công việc với người khác khi họ đã đồng ý chấp nhận các cam kết có liên quan</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Lặng lẽ, trầm tĩnh suy tính một mình</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Sử dụng các biện pháp đã biết rõ trong lý thuyết để thực hiện công việc</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Ra quyết định dựa trên các suy nghĩ, phân tích logic, không bị ảnh hưởng bởi cảm xúc</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Không muốn cam kết hạn chót hoàn thành công việc được giao</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Suy nghĩ kỹ trước khi nói</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Cân nhắc về các khả năng có thể xảy ra rồi mới giải quyết các vấn đề</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Mọi người đánh giá bạn là người công bằng, lý trí</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Suy nghĩ một thời gian dài trước khi ra quyết định giải quyết vấn đề</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Suy nghĩ nội tại và tình cảm, không để cho người ngoài nhìn thấy được suy nghĩ của mình</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn ưa thích các định nghĩa và khái niệm không rõ ràng</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn luôn giúp mọi người khám phá và hiểu họ cảm thấy như thế nào về sự vật/ sự việc</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn có xu hướng thay đổi và linh hoạt trong việc ra quyết định</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn ít khi nói ra bên ngoài hoặc thể hiện rất ít các suy nghĩ, dự tính của mình</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn tìm hiểu các cách nhìn khác nhau về sự kiện, vấn đề hay tình huống</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Sử dụng các giác quan và trải nghiệm cá nhân để ra quyết định</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Lên kế hoạch dài hạn dựa trên các số liệu để thực hiện công việc</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn có xu hướng thích gặp bạn mới</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+        
+        <h4 class="question">Bạn thiên về người có nhiều ý tưởng</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn ra quyết định dựa trên niềm tin cá nhân</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Sử dụng sổ tay ghi các ghi nhớ, cuộc hẹn, công việc</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Thảo luận về các vấn đề mới và dnahf thời gian dài suy nghĩ cùng cả nhóm trước khi ra quyết định</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn suy nghĩ, hoạch định kế hoạch cẩn thận với sụ chính xác cao</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Khi cân nhắc công việc, bạn không để ý tới hoàn cảnh và mối quan hệ với người có liên quan</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn sẽ làm tốt nếu như có hứng thú</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn có thiên hướng trở thành trung tâm của nhóm</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn có thiên hướng tưởng tượng về những gì có thể xảy ra</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn thường chú trọng đến cảm xúc khi xem phim hay đối thoại</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
+
+        <h4 class="question">Bạn thường bắt đầu buổi họp với thời gian định trước</h4>
+        {% for option in options %}
+            <input name="option" type="radio" value="{{option}}" style="font-size: medium;"> {{option}}
+        {% endfor %}
 </div>
 {% endblock %}

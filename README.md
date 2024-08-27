@@ -48,3 +48,21 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 [Link to guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Howto/Make_box_transparent)
 
 ## Option in quest: use a loop? : no one can fix my code
+
+## I want seperate box of quest but it just come all in one huge box :). So I decided to turn into select but yeh, I still want boxes
+<div>
+    <section class="quiz-section">
+        {% for question in questions %}
+        <div class="quiz-box">
+            <h3 class="question">{{question}}</h3>
+            <div class="option-list">
+                {% for option in options %}
+                <div class="option">
+                    <span class="handlee-regular">{{option}}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</div>
