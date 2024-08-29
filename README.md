@@ -66,3 +66,41 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
         {% endfor %}
     </section>
 </div>
+
+## I tryed to make radio choices in mbti test page but I forgot to change the options' name:
+### First I do like this so the choices in question 1 will disapper when I make another choice in question 2 because the program thought that 2 question is same: <notice that the name of every options is all option>
+{% for i in range(32) %}
+    {% if i % 2 == 0 %}
+    <form class="quiz-box2">
+        <h4 class="question">{{ questions[i] }}</h4>
+        {% for option in options %}
+        <input name="option" type="radio" value="{{i}}" style="font-size: medium;">{{option}}
+        {% endfor %}
+    </form>
+    {% else %}
+    <form class="quiz-box1">
+        <h4 class="question">{{ questions[i] }}</h4>
+        {% for option in options %}
+        <input name="option" type="radio" value="{{i}}" style="font-size: medium;">{{option}}
+        {% endfor %}
+    </form>
+    {% endif %}
+{% endfor %}
+### but now I change name in input into i so the name of options in one question is the same but in two separate question it is different
+{% for i in range(32) %}
+    {% if i % 2 == 0 %}
+    <form class="quiz-box2">
+        <h4 class="question">{{ questions[i] }}</h4>
+        {% for option in options %}
+        <input name="{{i}}" type="radio" value="{{i}}" style="font-size: medium;">{{option}}
+        {% endfor %}
+    </form>
+    {% else %}
+    <form class="quiz-box1">
+        <h4 class="question">{{ questions[i] }}</h4>
+        {% for option in options %}
+        <input name="{{i}}" type="radio" value="{{i}}" style="font-size: medium;">{{option}}
+        {% endfor %}
+    </form>
+    {% endif %}
+{% endfor %}
