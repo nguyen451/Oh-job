@@ -116,15 +116,32 @@ footer{
 }
 
 /*MBTI test */
-.quiz-box{
-    background-color: bisque;
-    width: auto;
-    height: fit-content;
-    gap: 20px;
+.quiz-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+.quiz-box1{
+    background-image: url(https://media.istockphoto.com/id/91768525/photo/starfield-with-flares.jpg?s=612x612&w=0&k=20&c=fpwjXzky1oKADNFoVQwcRwb1yJ5GPIzqpW9cIqc-ZgU=);
+    color: beige;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+}
+.quiz-box2{
+    background-image: url(https://media.istockphoto.com/id/596348958/photo/blue-nebula.jpg?s=612x612&w=0&k=20&c=7fDFdm0Hk0ctQQk7EwNv4WXjNhteVPlBRXYD8mA4FIU=);
+    color: beige;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+}
+/*linear-gradient(to right, #1E2A5E, #5B99C2);*/
 
-.quiz-box .question{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #0f1530;
-    text-align: center;
+.question{
+  font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BNCE" 0,
+    "INFM" 0,
+    "SPAC" 0;
 }
