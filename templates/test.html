@@ -14,20 +14,23 @@
     <form class="quiz-box2">
         <h4 class="question">{{ questions[i] }}</h4>
         {% for option in options %}
-        <input name="{{i}}" type="radio" value="{{i}}" style="font-size: medium;">{{option}}
+        <input name="{{i + 1}}" type="radio" value="{{i + 1}}" style="font-size: medium;">{{option}}
         {% endfor %}
     </form>
     {% else %}
     <form class="quiz-box1">
         <h4 class="question">{{ questions[i] }}</h4>
         {% for option in options %}
-        <input name="{{i}}" type="radio" value="{{i}}" style="font-size: medium;">{{option}}
+        <input name="{{i + 1}}" type="radio" value="{{i + 1}}" style="font-size: medium;">{{option}}
         {% endfor %}
     </form>
     {% endif %}
     {% endfor %}
-
 </div>
-
+<div>
+    <form action="/test" method="post" class="handlee-regular">
+        <button class="btn btn-primary" type="submit" >Submit</button>
+    </form>
+</div>
 
 {% endblock %}

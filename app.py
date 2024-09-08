@@ -79,7 +79,69 @@ def mbti():
 def test():
     # If user post all answer
     if request.method == "POST":
-        return apology("Todo", 404)
+        # caculate I:
+        I = 5 - int(request.form.get("1")) + int(request.form.get("5")) + int(request.form.get("9")) + int(request.form.get("13")) + int(request.form.get("17")) + 5 - int(request.form.get("21")) + 5 - int(request.form.get("25")) + 5 - int(request.form.get("29"))
+        E = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("17")) + int(request.form.get("21")) + int(request.form.get("25")) + int(request.form.get("29"))
+        
+        N = int(request.form.get("2")) + 5 - int(request.form.get("6")) + int(request.form.get("10")) + int(request.form.get("14")) + int(request.form.get("18")) + 5 - int(request.form.get("26")) + int(request.form.get("22")) + int(request.form.get("30"))
+        S = 5 - int(request.form.get("2")) + int(request.form.get("6")) + 5 - int(request.form.get("10")) + 5 - int(request.form.get("14")) + 5 - int(request.form.get("18")) + 5 - int(request.form.get("22")) + int(request.form.get("26")) + 5 - int(request.form.get("30"))
+        
+        T = int(request.form.get("3")) + int(request.form.get("7")) + int(request.form.get("11")) + 5 - int(request.form.get("15")) + 5 - int(request.form.get("19")) + 5 - int(request.form.get("23")) + int(request.form.get("27")) + 5 - int(request.form.get("31"))
+        F = 5 - int(request.form.get("3")) + 5 - int(request.form.get("7")) + 5 - int(request.form.get("11")) + int(request.form.get("15")) + int(request.form.get("19")) + int(request.form.get("23")) + 5 - int(request.form.get("27")) + int(request.form.get("31"))
+        
+        P = int(request.form.get("4")) + int(request.form.get("8")) + int(request.form.get("12")) + int(request.form.get("16")) + int(request.form.get("20")) + 5 - int(request.form.get("24")) + 5 - int(request.form.get("28")) + 5 - int(request.form.get("32"))
+        J = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("20")) + int(request.form.get("24")) + int(request.form.get("28")) + int(request.form.get("32"))
+
+        # decide what mbti:
+        if I > E:
+            mbti = "I"
+        else: mbti = "E"
+
+        if N > S:
+            mbti = mbti + "N"
+        else: mbti = mbti + "S"
+
+        if T > F:
+            mbti = mbti + "T"
+        else: mbti = mbti + "F"
+
+        if P > J:
+            mbti = mbti + "P"
+        else: mbti = mbti + "J"
+        
+        # render information about that mbti:
+        if mbti == "INTP":
+            return apology("Todo", 404)
+        elif mbti == "ENTP":
+            return apology("Todo", 404)
+        elif mbti == "ESTJ":
+            return apology("Todo", 404)
+        elif mbti == "ENTJ":
+            return apology("Todo", 404)
+        elif mbti == "INTJ":
+            return apology("Todo", 404)
+        elif mbti == "INFP":
+            return apology("Todo", 404)
+        elif mbti == "ISFJ":
+            return apology("Todo", 404)
+        elif mbti == "INFJ":
+            return apology("Todo", 404)
+        elif mbti == "ENFJ":
+            return apology("Todo", 404)
+        elif mbti == "ENFP":
+            return apology("Todo", 404)
+        elif mbti == "ISTJ":
+            return apology("Todo", 404)
+        elif mbti == "ESFJ":
+            return apology("Todo", 404)
+        elif mbti == "ISTP":
+            return apology("Todo", 404)
+        elif mbti == "ISFP":
+            return apology("Todo", 404)
+        elif mbti == "ESTP":
+            return apology("Todo", 404)
+        elif mbti == "ESFP":
+            return apology("Todo", 404)
     return render_template("test.html", questions = QUESTIONS, options = OPTIONS)
 
 @app.route("/major")
