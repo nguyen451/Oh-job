@@ -91,7 +91,7 @@ def test():
         
         P = int(request.form.get("4")) + int(request.form.get("8")) + int(request.form.get("12")) + int(request.form.get("16")) + int(request.form.get("20")) + 5 - int(request.form.get("24")) + 5 - int(request.form.get("28")) + 5 - int(request.form.get("32"))
         J = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("20")) + int(request.form.get("24")) + int(request.form.get("28")) + int(request.form.get("32"))
-
+        
         # decide what mbti:
         if I > E:
             mbti = "I"
