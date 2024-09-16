@@ -104,3 +104,11 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     </form>
     {% endif %}
 {% endfor %}
+
+
+### problem with request.form.get:
+Request return nontype 
+I checked in finance and turn out it just return nontype when it get nothing
+I checked back in test.html : forms has no post method -> chenge method into post for every form
+->> change action ="/test"
+because I edit and use request for route "/test" so I must add action="/test" in the form in html else /test cannot get anything in that form
