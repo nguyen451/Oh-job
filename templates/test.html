@@ -9,27 +9,27 @@
     <h5 style="font-family: Sofia, sans-serif;">Do the test to discover what kind of personality you are</h5>
 </div>
 <div class="quiz-container">
+    <form method="post">
     {% for i in range(32) %}
     {% if i % 2 == 0 %}
-    <form class="quiz-box2">
+    <div class="quiz-box2">
         <h4 class="question">{{ questions[i] }}</h4>
         {% for option in options %}
         <input name="{{i + 1}}" type="radio" value="{{i + 1}}" style="font-size: medium;">{{option}}
         {% endfor %}
-    </form>
+    </div>
     {% else %}
-    <form class="quiz-box1">
+    <div class="quiz-box1">
         <h4 class="question">{{ questions[i] }}</h4>
         {% for option in options %}
         <input name="{{i + 1}}" type="radio" value="{{i + 1}}" style="font-size: medium;">{{option}}
         {% endfor %}
-    </form>
+    </div>
     {% endif %}
     {% endfor %}
-</div>
-<div>
-    <form action="/test" method="post" class="handlee-regular">
+    <div class="handlee-regular">
         <button class="btn btn-primary" type="submit" >Submit</button>
+    </div>
     </form>
 </div>
 
