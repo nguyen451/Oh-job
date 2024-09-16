@@ -144,6 +144,12 @@ def test():
             return apology("Todo", 404)
     return render_template("test.html", questions = QUESTIONS, options = OPTIONS)
 
+@app.route("/intp")
+@login_required
+def intp():
+    return render_template("intp.html")
+
+
 @app.route("/major")
 @login_required
 def major():
