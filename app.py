@@ -78,6 +78,7 @@ def mbti():
 # is login required here? 
 def test():
     # If user post all answer
+    # missing: check for completed test : maybe using try except
     if request.method == "POST":
         # caculate I:
         I = 5 - int(request.form.get("1")) + int(request.form.get("5")) + int(request.form.get("9")) + int(request.form.get("13")) + int(request.form.get("17")) + 5 - int(request.form.get("21")) + 5 - int(request.form.get("25")) + 5 - int(request.form.get("29"))
@@ -111,11 +112,11 @@ def test():
         
         # render information about that mbti:
         if mbti == "INTP":
-            return apology("Todo", 404)
+            return apology("INTP", 404)
         elif mbti == "ENTP":
-            return apology("Todo", 404)
+            return apology("ENTP", 404)
         elif mbti == "ESTJ":
-            return apology("Todo", 404)
+            return apology("ESTJ", 404)
         elif mbti == "ENTJ":
             return apology("Todo", 404)
         elif mbti == "INTJ":

@@ -109,6 +109,13 @@ footer{
     text-shadow: 8px 8px 8px #ababab;
     color: #0f1530;
 }
+
+.header-note {
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px #ababab;
+    color: #0f1530;
+}
 .mbti-img{
     float: right;
     height: 250px;
@@ -147,15 +154,65 @@ footer{
 }
 
 /* mbti test result pages */
-.row{
-    margin-top: 5%;
+.text-box {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.mbti-col{
-    background: beige;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 15px 15px;
-    box-sizing: border-box;
+
+.text-item {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10%;
+    background-color: #1E2A5E;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: antiquewhite;
+}
+
+div ul {
+    list-style: none;
+}
+
+.mbti-container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas: 
+    'info info info info job job job job job'
+    'info info info info job job job job job'
+    'info info info info job job job job job'
+    'info info info info job job job job job'
+    'who who who who job job job job job'
+    'who who who who job job job job job'
+    'who who who who job job job job job';
+    gap: 15px;
+}
+
+.mbti-item1 {
+    padding: 20px;
+    background-color: beige;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    color: #1E2A5E;
+    grid-area: info;
+}
+
+.mbti-item2 {
+    padding: 20px;
+    background-color: beige;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    color: #1E2A5E;
+    grid-area: who;
+}
+
+.mbti-item3 {
+    padding: 20px;
+    background-color: beige;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    color: #1E2A5E;
+    grid-area: job;
 }

@@ -112,3 +112,7 @@ I checked in finance and turn out it just return nontype when it get nothing
 I checked back in test.html : forms has no post method -> chenge method into post for every form
 ->> change action ="/test"
 because I edit and use request for route "/test" so I must add action="/test" in the form in html else /test cannot get anything in that form
+### fixing problem with request.form.get:
+Because of not completed test -> of course return NULL value
+Fixing: maybe by try - except or auto complete value
+Status: not fixed yet <maybe later>
