@@ -15,14 +15,20 @@
     <div class="quiz-box2">
         <h4 class="question">{{ questions[i] }}</h4>
         {% for option in options %}
-        <input name="{{i + 1}}" type="radio" value="{{option}}" style="font-size: medium;">{{option}}
+        <label class="container check-container">{{option}}
+            <input name="{{i + 1}}" type="radio" value="{{option}}" style="font-size: medium;">
+            <span class="checkmark"></span>
+        </label>
         {% endfor %}
     </div>
     {% else %}
     <div class="quiz-box1">
         <h4 class="question">{{ questions[i] }}</h4>
         {% for option in options %}
-        <input name="{{i + 1}}" type="radio" value="{{option}}" style="font-size: medium;">{{option}}
+        <label class="container check-container">{{option}}
+            <input name="{{i + 1}}" type="radio" value="{{option}}" style="font-size: medium;">
+            <span class="checkmark"></span>
+        </label>
         {% endfor %}
     </div>
     {% endif %}

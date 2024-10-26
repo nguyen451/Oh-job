@@ -132,13 +132,13 @@ footer{
     background-image: url(https://media.istockphoto.com/id/91768525/photo/starfield-with-flares.jpg?s=612x612&w=0&k=20&c=fpwjXzky1oKADNFoVQwcRwb1yJ5GPIzqpW9cIqc-ZgU=);
     color: beige;
     margin-bottom: 1rem;
-    padding: 1rem 1rem;
+    padding: 2rem 1rem;
 }
 .quiz-box2{
     background-image: url(https://media.istockphoto.com/id/596348958/photo/blue-nebula.jpg?s=612x612&w=0&k=20&c=7fDFdm0Hk0ctQQk7EwNv4WXjNhteVPlBRXYD8mA4FIU=);
     color: beige;
     margin-bottom: 1rem;
-    padding: 1rem 1rem;
+    padding: 2rem 1rem;
 }
 /*linear-gradient(to right, #1E2A5E, #5B99C2);*/
 
@@ -216,3 +216,71 @@ div ul {
     color: #1E2A5E;
     grid-area: job;
 }
+
+
+/* Customize the label (the container) */
+.container .check-container {
+    display: inline;
+    position: relative;
+    justify-content: space-between;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container .check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container .check-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container .check-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container .check-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .check-container .checkmark:after {
+    top: 7px;
+    left: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+  }
