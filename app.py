@@ -1,4 +1,5 @@
 import os
+import json
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -96,66 +97,42 @@ def test():
         # decide what mbti:
         if I > E:
             mbti = "I"
-        else: mbti = "E"
+        else: 
+            mbti = "E"
 
         if N > S:
             mbti = mbti + "N"
-        else: mbti = mbti + "S"
+        else: 
+            mbti = mbti + "S"
 
         if T > F:
             mbti = mbti + "T"
-        else: mbti = mbti + "F"
+        else: 
+            mbti = mbti + "F"
 
         if P > J:
             mbti = mbti + "P"
-        else: mbti = mbti + "J"
+        else: 
+            mbti = mbti + "J"
         
-        # render information about that mbti:
-        if mbti == "INTP":
-            return apology("INTP", 404)
-        elif mbti == "ENTP":
-            return apology("ENTP", 404)
-        elif mbti == "ESTJ":
-            return apology("ESTJ", 404)
-        elif mbti == "ENTJ":
-            return apology("Todo", 404)
-        elif mbti == "INTJ":
-            return apology("Todo", 404)
-        elif mbti == "INFP":
-            return apology("Todo", 404)
-        elif mbti == "ISFJ":
-            return apology("Todo", 404)
-        elif mbti == "INFJ":
-            return apology("Todo", 404)
-        elif mbti == "ENFJ":
-            return apology("Todo", 404)
-        elif mbti == "ENFP":
-            return apology("Todo", 404)
-        elif mbti == "ISTJ":
-            return apology("Todo", 404)
-        elif mbti == "ESFJ":
-            return apology("Todo", 404)
-        elif mbti == "ISTP":
-            return apology("Todo", 404)
-        elif mbti == "ISFP":
-            return apology("Todo", 404)
-        elif mbti == "ESTP":
-            return apology("Todo", 404)
-        elif mbti == "ESFP":
-            return apology("Todo", 404)
+        # save user's result
+        db.execute("INSERT INTO history_results (mbti, introvert, extravert, sensor, intuitive, perciever, judger, feeler, thinker) VALUES (?,?,?,?,?,?,?,?,?)",mbti,I,E,S,N,P,J,F,T)
+        # cux we've just create the test so it will have tha maximun value id in the table, the test_id is not depend on users'id
+        test_id = db.execute("SELECT MAX(id) FROM history_results")
+        db.execute("INSERT INTO history_test (user_id, test_id) VALUES(?,?)", session["user_id"], test_id[0]["MAX(id)"])
+        # render results page:
+        return redirect("/results")
     return render_template("test.html", questions = QUESTIONS, options = OPTIONS)
 
-@app.route("/intp")
+
+# ???? need????
+@app.route("/results")
 @login_required
 def intp():
-    return render_template("intp.html")
-
-
-@app.route("/major")
-@login_required
-def major():
-    return apology("Todo", 404)
-
+    # get the max id test cuz it is the current working test
+    result = db.execute("SELECT * FROM history_results WHERE id = (SELECT MAX(id) FROM history_results)")
+    return render_template("results.html", result=result)
+    
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():

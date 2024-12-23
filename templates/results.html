@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block tiltle %} Your MBTI {% endblock %}
+
+{% block main %}
+<div>
+    <h1 class="header-text" style="text-align: center;">{{result[0].mbti}}</h1>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">INTROVERT</th>
+                <th scope="col">EXTRAVERT</th>
+                <th scope="col">SENSOR</th>
+                <th scope="col">INTUITIVE</th>
+                <th scope="col">PERCIEVER</th>
+                <th scope="col">JUDGER</th>
+                <th scope="col">FEELER</th>
+                <th scope="col">THINKER</th>
+            </tr>
+        </thead>
+        <tb>
+            <tr>
+                <td>{{result[0].id}}</td>
+                <td>{{result[0].introvert}}</td>
+                <td>{{result[0].extravert}}</td>
+                <td>{{result[0].sensor}}</td>
+                <td>{{result[0].intuitive}}</td>
+                <td>{{result[0].perciever}}</td>
+                <td>{{result[0].judger}}</td>
+                <td>{{result[0].feeler}}</td>
+                <td>{{result[0].thinker}}</td>
+            </tr>
+        </tb>
+    </table>
+</div>
+{% endblock %}

@@ -176,47 +176,6 @@ div ul {
     list-style: none;
 }
 
-.mbti-container {
-    display: grid;
-    justify-content: space-between;
-    grid-template-areas: 
-    'info info info info job job job job job'
-    'info info info info job job job job job'
-    'info info info info job job job job job'
-    'info info info info job job job job job'
-    'who who who who job job job job job'
-    'who who who who job job job job job'
-    'who who who who job job job job job';
-    gap: 15px;
-}
-
-.mbti-item1 {
-    padding: 20px;
-    background-color: beige;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
-    color: #1E2A5E;
-    grid-area: info;
-}
-
-.mbti-item2 {
-    padding: 20px;
-    background-color: beige;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
-    color: #1E2A5E;
-    grid-area: who;
-}
-
-.mbti-item3 {
-    padding: 20px;
-    background-color: beige;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
-    color: #1E2A5E;
-    grid-area: job;
-}
-
 
 /* Customize the label (the container) */
 .container .check-container {
@@ -284,3 +243,8 @@ div ul {
     border-radius: 50%;
     background: white;
   }
+
+
+
+  /* results
+  /* Make sure that padding behaves as expected */
