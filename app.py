@@ -81,18 +81,33 @@ def test():
     # missing: check for completed test : maybe using try except
     if request.method == "POST":
         # caculate I:
-        I = 5 - int(request.form.get("1")) + int(request.form.get("5")) + int(request.form.get("9")) + int(request.form.get("13")) + int(request.form.get("17")) + 5 - int(request.form.get("21")) + 5 - int(request.form.get("25")) + 5 - int(request.form.get("29"))
-        E = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("17")) + int(request.form.get("21")) + int(request.form.get("25")) + int(request.form.get("29"))
+        try:
+            I = 5 - int(request.form.get("1")) + int(request.form.get("5")) + int(request.form.get("9")) + int(request.form.get("13")) + int(request.form.get("17")) + 5 - int(request.form.get("21")) + 5 - int(request.form.get("25")) + 5 - int(request.form.get("29"))
+            E = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("17")) + int(request.form.get("21")) + int(request.form.get("25")) + int(request.form.get("29"))
         
-        N = int(request.form.get("2")) + 5 - int(request.form.get("6")) + int(request.form.get("10")) + int(request.form.get("14")) + int(request.form.get("18")) + 5 - int(request.form.get("26")) + int(request.form.get("22")) + int(request.form.get("30"))
-        S = 5 - int(request.form.get("2")) + int(request.form.get("6")) + 5 - int(request.form.get("10")) + 5 - int(request.form.get("14")) + 5 - int(request.form.get("18")) + 5 - int(request.form.get("22")) + int(request.form.get("26")) + 5 - int(request.form.get("30"))
+            N = int(request.form.get("2")) + 5 - int(request.form.get("6")) + int(request.form.get("10")) + int(request.form.get("14")) + int(request.form.get("18")) + 5 - int(request.form.get("26")) + int(request.form.get("22")) + int(request.form.get("30"))
+            S = 5 - int(request.form.get("2")) + int(request.form.get("6")) + 5 - int(request.form.get("10")) + 5 - int(request.form.get("14")) + 5 - int(request.form.get("18")) + 5 - int(request.form.get("22")) + int(request.form.get("26")) + 5 - int(request.form.get("30"))
         
-        T = int(request.form.get("3")) + int(request.form.get("7")) + int(request.form.get("11")) + 5 - int(request.form.get("15")) + 5 - int(request.form.get("19")) + 5 - int(request.form.get("23")) + int(request.form.get("27")) + 5 - int(request.form.get("31"))
-        F = 5 - int(request.form.get("3")) + 5 - int(request.form.get("7")) + 5 - int(request.form.get("11")) + int(request.form.get("15")) + int(request.form.get("19")) + int(request.form.get("23")) + 5 - int(request.form.get("27")) + int(request.form.get("31"))
+            T = int(request.form.get("3")) + int(request.form.get("7")) + int(request.form.get("11")) + 5 - int(request.form.get("15")) + 5 - int(request.form.get("19")) + 5 - int(request.form.get("23")) + int(request.form.get("27")) + 5 - int(request.form.get("31"))
+            F = 5 - int(request.form.get("3")) + 5 - int(request.form.get("7")) + 5 - int(request.form.get("11")) + int(request.form.get("15")) + int(request.form.get("19")) + int(request.form.get("23")) + 5 - int(request.form.get("27")) + int(request.form.get("31"))
         
-        P = int(request.form.get("4")) + int(request.form.get("8")) + int(request.form.get("12")) + int(request.form.get("16")) + int(request.form.get("20")) + 5 - int(request.form.get("24")) + 5 - int(request.form.get("28")) + 5 - int(request.form.get("32"))
-        J = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("20")) + int(request.form.get("24")) + int(request.form.get("28")) + int(request.form.get("32"))
+            P = int(request.form.get("4")) + int(request.form.get("8")) + int(request.form.get("12")) + int(request.form.get("16")) + int(request.form.get("20")) + 5 - int(request.form.get("24")) + 5 - int(request.form.get("28")) + 5 - int(request.form.get("32"))
+            J = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("20")) + int(request.form.get("24")) + int(request.form.get("28")) + int(request.form.get("32"))
         
+            I = 5 - int(request.form.get("1")) + int(request.form.get("5")) + int(request.form.get("9")) + int(request.form.get("13")) + int(request.form.get("17")) + 5 - int(request.form.get("21")) + 5 - int(request.form.get("25")) + 5 - int(request.form.get("29"))
+            E = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("17")) + int(request.form.get("21")) + int(request.form.get("25")) + int(request.form.get("29"))
+        
+            N = int(request.form.get("2")) + 5 - int(request.form.get("6")) + int(request.form.get("10")) + int(request.form.get("14")) + int(request.form.get("18")) + 5 - int(request.form.get("26")) + int(request.form.get("22")) + int(request.form.get("30"))
+            S = 5 - int(request.form.get("2")) + int(request.form.get("6")) + 5 - int(request.form.get("10")) + 5 - int(request.form.get("14")) + 5 - int(request.form.get("18")) + 5 - int(request.form.get("22")) + int(request.form.get("26")) + 5 - int(request.form.get("30"))
+        
+            T = int(request.form.get("3")) + int(request.form.get("7")) + int(request.form.get("11")) + 5 - int(request.form.get("15")) + 5 - int(request.form.get("19")) + 5 - int(request.form.get("23")) + int(request.form.get("27")) + 5 - int(request.form.get("31"))
+            F = 5 - int(request.form.get("3")) + 5 - int(request.form.get("7")) + 5 - int(request.form.get("11")) + int(request.form.get("15")) + int(request.form.get("19")) + int(request.form.get("23")) + 5 - int(request.form.get("27")) + int(request.form.get("31"))
+        
+            P = int(request.form.get("4")) + int(request.form.get("8")) + int(request.form.get("12")) + int(request.form.get("16")) + int(request.form.get("20")) + 5 - int(request.form.get("24")) + 5 - int(request.form.get("28")) + 5 - int(request.form.get("32"))
+            J = int(request.form.get("1")) + 5 - int(request.form.get("5")) + 5 - int(request.form.get("9")) + 5 - int(request.form.get("13")) + 5 - int(request.form.get("20")) + int(request.form.get("24")) + int(request.form.get("28")) + int(request.form.get("32"))
+        except TypeError:
+            flash("Must answer all questions")
+            return render_template("test.html", questions = QUESTIONS, options = OPTIONS)
         # decide what mbti:
         if I > E:
             mbti = "I"
