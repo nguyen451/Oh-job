@@ -224,13 +224,42 @@ def account():
     result = db.execute("SELECT * FROM history_results WHERE id IN (SELECT test_id FROM history_test WHERE user_id =?)", session["user_id"])
     time = db.execute("SELECT timestamp FROM history_test WHERE user_id=?", session["user_id"])
     count = len(result)
-    print("USERNAME")
-    print(username)
-    print("RESULT")
-    print(result)
-    print("TIME")
-    print(time)
-    print("COUNT")
-    print(count)
     return render_template("account.html",username=username[0]["username"], result=result, time=time, count=count)
-    
+
+
+@app.route("/changePW", methods=["GET", "POST"])
+@login_required
+def changePW():
+    if request.method == "POST":
+        if not request.form.get("current_password"):
+            return apology("must provide current pw", 403)
+        if not request.form.get("new_password"):
+            return apology("must provide new pw", 403)
+        hash = db.execute("SELECT hash FROM users WHERE id=?", session["user_id"])
+        if not check_password_hash(hash[0]["hash"], request.form.get("current_password")):
+            return apology("invalid pw", 403)
+        
+        new_password = request.form.get("new_password")
+        new_hash = generate_password_hash(new_password)
+        db.execute("UPDATE users SET hash =? WHERE id=?", new_hash, session["user_id"])
+        return redirect("/")
+    else:
+        return render_template("changePW.html")
+
+
+@app.route("/changeUN", methods=["GET", "POST"])
+@login_required
+def changeUN():
+    if request.method == "POST":
+        if not request.form.get("password"):
+            return apology("must provide pw", 403)
+        if not request.form.get("new_username"):
+            return apology("must provide new un", 403)
+        hash = db.execute("SELECT hash FROM users WHERE id=?", session["user_id"])
+        if not chech_password_hash(hash[0]["hash"], request.form.get("password")):
+            return apology("invalid pw", 403)
+        newName = request.form.get("new_username")
+        db.execute("UPDATE users SET username =? WHERE user_id=?", newName, session["user_id"])
+        return redirect("/")
+    else:
+        return render_template("changeUN.html")
