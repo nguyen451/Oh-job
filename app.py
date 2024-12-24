@@ -270,7 +270,7 @@ def changeUN():
             flash("Incorrect password")
             return render_template("changeUN.html")
         newName = request.form.get("new_username")
-        db.execute("UPDATE users SET username =? WHERE user_id=?", newName, session["user_id"])
+        db.execute("UPDATE users SET username =? WHERE id=?", newName, session["user_id"])
         return redirect("/")
     else:
         return render_template("changeUN.html")
