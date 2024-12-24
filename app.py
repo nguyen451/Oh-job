@@ -65,7 +65,6 @@ def after_request(response):
 
 
 @app.route("/")
-@login_required
 def index():
     return render_template("index.html")
 
@@ -267,7 +266,7 @@ def changeUN():
             flash("Must provide new username")
             return render_template("changeUN.html")
         hash = db.execute("SELECT hash FROM users WHERE id=?", session["user_id"])
-        if not chech_password_hash(hash[0]["hash"], request.form.get("password")):
+        if not check_password_hash(hash[0]["hash"], request.form.get("password")):
             flash("Incorrect password")
             return render_template("changeUN.html")
         newName = request.form.get("new_username")
