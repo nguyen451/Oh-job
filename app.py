@@ -22,38 +22,38 @@ Session(app)
 db = SQL("sqlite:///mbti.db")
 
 OPTIONS = ["0", "1", "2", "3", "4", "5"]
-QUESTIONS = ["Ra quyết định sau khi cân nhắc suy nghĩ của mọi người",
-            "Được mọi người cho là người có trí tưởng tượng và sáng tạo",
-            "Ra quyết định liên quan tới con người dựa trên số liệu và phân tích khách quan", 
-            "Chỉ thực hiện công việc với người khác khi họ đã đồng ý chấp nhận các cam kết có liên quan", 
-            "Lặng lẽ, trầm tĩnh suy tính một mình",
-            "Sử dụng các biện pháp đã biết rõ trong lý thuyết để thực hiện công việc",
-            "Ra quyết định dựa trên các suy nghĩ, phân tích logic, không bị ảnh hưởng bởi cảm xúc",
-            "Không muốn cam kết hạn chót hoàn thành công việc được giao",
-            "Suy nghĩ kỹ trước khi nói",
-            "Cân nhắc về các khả năng có thể xảy ra rồi mới giải quyết các vấn đề",
-            "Mọi người đánh giá bạn là người công bằng, lý trí", 
-            "Suy nghĩ một thời gian dài trước khi ra quyết định giải quyết vấn đề", 
-            "Suy nghĩ nội tại và tình cảm, không để cho người ngoài nhìn thấy được suy nghĩ của mình",
-            "Bạn ưa thích các định nghĩa và khái niệm không rõ ràng", 
-            "Bạn luôn giúp mọi người khám phá và hiểu họ cảm thấy như thế nào về sự vật/ sự việc",
-            "Bạn có xu hướng thay đổi và linh hoạt trong việc ra quyết định", 
-            "Bạn ít khi nói ra bên ngoài hoặc thể hiện rất ít các suy nghĩ, dự tính của mình", 
-            "Bạn tìm hiểu các cách nhìn khác nhau về sự kiện, vấn đề hay tình huống",
-            "Sử dụng các giác quan và trải nghiệm cá nhân để ra quyết định", 
-            "Lên kế hoạch dài hạn dựa trên các số liệu để thực hiện công việc", 
-            "Bạn có xu hướng thích gặp bạn mới", 
-            "Bạn thiên về người có nhiều ý tưởng",
-            "Bạn ra quyết định dựa trên niềm tin cá nhân",
-            "Sử dụng sổ tay ghi các ghi nhớ, cuộc hẹn, công việc",
-            "Thảo luận về các vấn đề mới và dnahf thời gian dài suy nghĩ cùng cả nhóm trước khi ra quyết định",
-            "Bạn suy nghĩ, hoạch định kế hoạch cẩn thận với sụ chính xác cao",
-            "Khi cân nhắc công việc, bạn không để ý tới hoàn cảnh và mối quan hệ với người có liên quan",
-            "Bạn sẽ làm tốt nếu như có hứng thú",
-            "Bạn có thiên hướng trở thành trung tâm của nhóm",
-            "Bạn có thiên hướng tưởng tượng về những gì có thể xảy ra",
-            "Bạn thường chú trọng đến cảm xúc khi xem phim hay đối thoại",
-            "Bạn thường bắt đầu buổi họp với thời gian định trước"]
+QUESTIONS = ["Make decisions after considering other people's thoughts",
+            "Be perceived as imaginative and creative",
+            "Make decisions that involve people based on data and customer analysis",
+            "Only do work with others when they agree to accept the relevant commitments",
+            "Be quiet, calm and think alone",
+            "Use clearly known measures in theory to do the job",
+            "Make decisions based on logical thinking and analysis, not influenced by emotions",
+            "Do not want to commit to completing the assigned work",
+            "Think carefully before speaking",
+            "Consider the possibilities that can happen and solve the problem",
+            "Everyone judges you as a technological, intellectual person",
+            "Think for a long time before deciding to solve the problem",
+            "Think internally and emotionally, do not let outsiders see your thoughts",
+            "You clearly stabilize the definitions and concept",
+            "You always help people explore and understand how they feel about things/events",
+            "You tend to change and act while deciding on work",
+            "You rarely speak out or can do very little thinking, planning",
+            "You learn different perspectives on events, issues or problems",
+            "Use your senses and personal experiences to decide",
+            "Based on the long-term limits of data-based plans to do work",
+            "You tend to seek new friends",
+            "You are inclined to people with many ideas",
+            "You have made decisions based on personal beliefs",
+            "Use notebooks, dating, work",
+            "Discuss new issues and spend a long time thinking with the whole group before deciding",
+            "You think, plan principles with high specificity",
+            "When considering work, you do not let the situation and relationship with the person involved be suggested",
+            "You do well when you are interested",
+            "You tend to be the center of attention in a group",
+            "You tend to fantasize about what might happen",
+            "You tend to pay attention to emotions when watching movies or having conversations",
+            "You tend to start meetings at a predetermined time"]
 
 @app.after_request
 def after_request(response):
@@ -65,7 +65,6 @@ def after_request(response):
 
 
 @app.route("/")
-@login_required
 def index():
     return render_template("index.html")
 
@@ -143,10 +142,10 @@ def login():
 
     # POST
     if request.method == "POST":
-
         # Exist user name and pw
         if not request.form.get("username") or not request.form.get("password"):
-            return apology("Must provide username and password", 400)
+            flash("Missing username or password")
+            return render_template("login.html")
         
         # Query database for username
         rows = db.execute(
@@ -157,7 +156,8 @@ def login():
         if len(rows) != 1 or not check_password_hash(
             rows[0]["hash"], request.form.get("password")
         ):
-            return apology("invalid username and/or password", 400)
+            flash("Incorrect password")
+            return render_template("login.html")
         
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -190,19 +190,23 @@ def register():
     if request.method == "POST":
         # Ensure username and password was provided
         if not request.form.get("username") or not request.form.get("password"):
-            return apology("Must provide username and password", 400)
+            flash("Missing username or password")
+            return render_template("register.html")
         
         # Ensure user true rewrite password
         elif not request.form.get("confirmation"):
-            return apology("Must rewrite password", 400)
+            flash("Must rewrite password")
+            return render_template("register.html")
         elif request.form.get("confirmation") != request.form.get("password"):
-            return apology("Password rewrite not true", 400)
+            flash("Incorrect password")
+            return render_template("register.html")
         
         # Check if usename exists
         username = request.form.get("username")
         checkname = db.execute("SELECT username FROM users WHERE username = ?", username)
         if len(checkname) != 0:
-            return apology("Username existed", 400)
+            flash("Username existed")
+            return render_template("register.html")
         
         # Hash password
         hash = generate_password_hash(request.form.get("password"))
@@ -230,14 +234,18 @@ def account():
 @app.route("/changePW", methods=["GET", "POST"])
 @login_required
 def changePW():
+
     if request.method == "POST":
         if not request.form.get("current_password"):
-            return apology("must provide current pw", 403)
+            flash("Must provide current password")
+            return render_template("changePW.html")
         if not request.form.get("new_password"):
-            return apology("must provide new pw", 403)
+            flash("Must provide new password")
+            return render_template("changePW.html")
         hash = db.execute("SELECT hash FROM users WHERE id=?", session["user_id"])
         if not check_password_hash(hash[0]["hash"], request.form.get("current_password")):
-            return apology("invalid pw", 403)
+            flash("Incorrect password")
+            return render_template("changePW.html")
         
         new_password = request.form.get("new_password")
         new_hash = generate_password_hash(new_password)
@@ -252,14 +260,17 @@ def changePW():
 def changeUN():
     if request.method == "POST":
         if not request.form.get("password"):
-            return apology("must provide pw", 403)
+            flash("Must provide password")
+            return render_template("changeUN.html")
         if not request.form.get("new_username"):
-            return apology("must provide new un", 403)
+            flash("Must provide new username")
+            return render_template("changeUN.html")
         hash = db.execute("SELECT hash FROM users WHERE id=?", session["user_id"])
-        if not chech_password_hash(hash[0]["hash"], request.form.get("password")):
-            return apology("invalid pw", 403)
+        if not check_password_hash(hash[0]["hash"], request.form.get("password")):
+            flash("Incorrect password")
+            return render_template("changeUN.html")
         newName = request.form.get("new_username")
-        db.execute("UPDATE users SET username =? WHERE user_id=?", newName, session["user_id"])
+        db.execute("UPDATE users SET username =? WHERE id=?", newName, session["user_id"])
         return redirect("/")
     else:
         return render_template("changeUN.html")
