@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block tiltle %} Your MBTI {% endblock %}
+
+{% block main %}
+<div>
+    <div class="avatar">
+        <h2>Random avatar</h2>
+        <button class="avatar-button" id="abtn">Click</button>
+        <h5 id="emoji-name">Emoji-name</h5>
+    </div>
+    <script>
+        const btnEL = document.getElementById("abtn");
+        const emojiNameEL = document.getElementById("emoji-name");
+        
+        const emoji = []
+
+        async function getEmoji(){
+            let response = await fetch("https://emoji-api.com/emojis?access_key=6d3bc7df0b3636a0f55ce69acf2578f8a5da9d6d")
+
+            data = await response.json();
+
+            for (let i=0; i<300; i++) {
+                emoji.push({
+                    emojiName: data[i].character,
+                    emojiCode: data[i].unicodeName,
+                });
+            }
+        }
+
+        getEmoji()
+
+        btnEL.addEventListener("click", ()=>{
+            /*explain the math.floor and Math.randon*/
+            const randnum = Math.floor(Math.random()*emoji.length);
+            btnEL.innerText = emoji[randnum].emojiName;
+            emojiNameEL.innerText = emoji[randnum].emojiCode;
+        })
+
+    </script>
+</div>
+
+<div>
+    <h1 class="header-text" style="text-align: center;">{{username}}</h1>
+</div>
+
+<div>
+    <h4><a href="/changePW">Change password</a></h4>
+    <h4><a href="/changeUN">Change username</a></h4>
+</div>
+
+<div>
+    <hr>
+    <h4>History</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">TIME</th>
+                <th scope="col">MBTI</th>
+                <th scope="col">INTROVERT</th>
+                <th scope="col">EXTRAVERT</th>
+                <th scope="col">SENSOR</th>
+                <th scope="col">INTUITIVE</th>
+                <th scope="col">PERCIEVER</th>
+                <th scope="col">JUDGER</th>
+                <th scope="col">FEELER</th>
+                <th scope="col">THINKER</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(count) %}
+            <tr>
+                <td>{{result[i].id}}</td>
+                <td>{{time[i].timestamp}}</td>
+                <td>{{result[i].mbti}}</td>
+                <td>{{result[i].introvert}}</td>
+                <td>{{result[i].extravert}}</td>
+                <td>{{result[i].sensor}}</td>
+                <td>{{result[i].intuitive}}</td>
+                <td>{{result[i].perciever}}</td>
+                <td>{{result[i].judger}}</td>
+                <td>{{result[i].feeler}}</td>
+                <td>{{result[i].thinker}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

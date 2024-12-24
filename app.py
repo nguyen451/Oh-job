@@ -216,5 +216,21 @@ def register():
         return render_template("register.html")
 
         
+@app.route("/account")
+@login_required
+def account():
+    username = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
 
+    result = db.execute("SELECT * FROM history_results WHERE id IN (SELECT test_id FROM history_test WHERE user_id =?)", session["user_id"])
+    time = db.execute("SELECT timestamp FROM history_test WHERE user_id=?", session["user_id"])
+    count = len(result)
+    print("USERNAME")
+    print(username)
+    print("RESULT")
+    print(result)
+    print("TIME")
+    print(time)
+    print("COUNT")
+    print(count)
+    return render_template("account.html",username=username[0]["username"], result=result, time=time, count=count)
     
