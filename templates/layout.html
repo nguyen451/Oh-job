@@ -22,7 +22,6 @@
         <link href="/static/styles.css" rel="stylesheet">
 
         <title>Oh, job! {% block title %}{% endblock %}</title>
-
     </head>
 
     <body class="main" class="handlee-regular">
@@ -51,6 +50,21 @@
                 </div>
         </div>
         </nav>
+
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+                    {% for message in messages %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Holy guacamole!</strong> {{message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                    
+            {% endif %}
+            {% endwith %}
+        </div>
 
         <main class="container py-5 text-center">
             {% block main %}{% endblock %}
