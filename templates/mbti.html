@@ -15,11 +15,12 @@
             <p style="color: rgb(45, 11, 78); font-family: Sofia, sans-serif; font-size: 20px;">Do the test <button class="btn btn-primary" type="submit">MBTI</button> or search your MBTI:</p>
         </form>
         <!-- how to search ?-->
-        <form action="/mbti_search" method="post">
+        <form action="https://www.google.com/search" method="get">
             <div class="mb-3" style="font-family: Sofia, sans-serif; font-size: 20px;">
-                <input autocomplete="off" class="form-control mx-auto w-auto" name="mbti" placeholder="Your MBTI" type="text">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="q" placeholder="Your MBTI" type="text">
             </div>
-            <button class="btn btn-primary" type="submit" style="font-family: Sofia, sans-serif; font-size: 20px;">Search</button>
+            <button class="btn btn-primary" style="font-family: Sofia, sans-serif; font-size: 20px;">Search</button>
         </form>
+
     </div>
 {% endblock %}
